@@ -1,27 +1,28 @@
-package com.example;
+package com.example.Decorator;
 
-public class SeguroViaje implements Servicio {
+public class CoberturaExtendida implements Servicio {
+
     private Servicio servicio;
     private double precio;
 
-    public SeguroViaje(Servicio servicio, double precio) {
+    public CoberturaExtendida(Servicio servicio, double precio) {
         this.servicio = servicio;
         this.precio = precio;
-    }   
-    public Servicio getServicio() {
-        return servicio;
     }
 
+    public Servicio getServicio() {
+        return servicio;
+    }   
     public double getPrecio() {
         return precio;
     }
 
     @Override
     public String toString() {
-        return "SeguroViaje{" +
+        return "CoberturaExtendida{" +
                 "servicio=" + servicio +
                 ", precio=" + precio +
                 '}';
     }
-     
+    
 }

@@ -1,7 +1,11 @@
-package com.example;
+package com.example.Builder;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.example.Usuario;
+import com.example.Vehiculo;
+import com.example.Decorator.Servicio;
 
 public class Reserva implements Servicio {
     private String id;

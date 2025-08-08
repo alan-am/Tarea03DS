@@ -1,4 +1,4 @@
-package com.example;
+package com.example.Decorator;
 
 public interface Servicio {
     

@@ -1,4 +1,6 @@
-package com.example;
+package com.example.Builder;
+
+import com.example.Vehiculo;
 
 public class TravelEaseReserva implements ReservaBuilder {
 
