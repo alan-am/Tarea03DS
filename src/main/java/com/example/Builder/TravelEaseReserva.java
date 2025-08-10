@@ -1,6 +1,12 @@
 package com.example.Builder;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import com.example.Boleto;
+import com.example.Usuario;
 import com.example.Vehiculo;
+import com.example.Vuelo;
 
 public class TravelEaseReserva implements ReservaBuilder {
 
@@ -12,19 +18,38 @@ public class TravelEaseReserva implements ReservaBuilder {
 
     @Override
     public void reset() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reset'");
+        this.reserva = new Reserva();
     }
 
     @Override
     public void buildVuelo(Vuelo vuelo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buildVuelo'");
+        this.reserva.setVuelo(vuelo);
     }
 
     @Override
     public void buildAlquilerVehiculo(Vehiculo vehiculo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buildAlquilerVehiculo'");
+        if (this.reserva.getVehiculosReservados() == null) {
+            this.reserva.setVehiculosReservados(new ArrayList<>());
+        }
+        this.reserva.getVehiculosReservados().add(vehiculo);
     }
+
+    @Override
+    public void buildBoleto(Boleto boleto) {
+        if (this.reserva.getBoletos() == null) {
+            this.reserva.setBoletos(new ArrayList<>());
+        }
+        this.reserva.getBoletos().add(boleto);
+    }
+
+    @Override
+    public void buildDatos(String id, Usuario reservador) {
+        this.reserva.setId(id);
+        this.reserva.setReservador(reservador);
+        this.reserva.setFechaCreacion(LocalDateTime.now());
+        this.reserva.setEstado(EstadoReserva.PENDIENTE);
+    }
+
+
+    
 }

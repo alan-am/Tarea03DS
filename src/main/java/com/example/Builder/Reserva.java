@@ -3,8 +3,10 @@ package com.example.Builder;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.Boleto;
 import com.example.Usuario;
 import com.example.Vehiculo;
+import com.example.Vuelo;
 import com.example.Decorator.Servicio;
 
 public class Reserva implements Servicio {
@@ -16,6 +18,8 @@ public class Reserva implements Servicio {
     private List<Boleto> boletos;
     private List<Vehiculo> vehiculosReservados;
     private double precio;
+
+    public Reserva(){};
 
     public Reserva(String id, LocalDateTime fechaCreacion, Usuario reservador, EstadoReserva estado, Vuelo vuelo, List<Boleto> boletos, List<Vehiculo> vehiculosReservados, double precio) {
         this.id = id;
@@ -36,4 +40,71 @@ public class Reserva implements Servicio {
         this.estado = EstadoReserva.CANCELADA;
     }
 
+
+    //getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Usuario getReservador() {
+        return reservador;
+    }
+
+    public void setReservador(Usuario reservador) {
+        this.reservador = reservador;
+    }
+
+    public EstadoReserva getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoReserva estado) {
+        this.estado = estado;
+    }
+
+    public Vuelo getVuelo() {
+        return vuelo;
+    }
+
+    public void setVuelo(Vuelo vuelo) {
+        this.vuelo = vuelo;
+    }
+
+    public List<Boleto> getBoletos() {
+        return boletos;
+    }
+
+    public void setBoletos(List<Boleto> boletos) {
+        this.boletos = boletos;
+    }
+
+    public List<Vehiculo> getVehiculosReservados() {
+        return vehiculosReservados;
+    }
+
+    public void setVehiculosReservados(List<Vehiculo> vehiculosReservados) {
+        this.vehiculosReservados = vehiculosReservados;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    
 }
