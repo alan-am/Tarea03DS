@@ -7,24 +7,40 @@ public class Vehiculo {
     private String ubiActual;
     private EstadoVehiculo estado;
     private ProveedorVehiculo proveedor;
+    private double precioAlquiler;
 
-    public Vehiculo(TipoVehiculo tipo, String placa, Integer maxPasajeros, String ubiActual, EstadoVehiculo estado, ProveedorVehiculo proveedor) {
+    public Vehiculo(TipoVehiculo tipo, String placa, Integer maxPasajeros, String ubiActual, EstadoVehiculo estado, ProveedorVehiculo proveedor, double precioAlquiler) {
         this.tipo = tipo;
         this.placa = placa;
         this.maxPasajeros = maxPasajeros;
         this.ubiActual = ubiActual;
         this.estado = estado;
         this.proveedor = proveedor;
+        this.precioAlquiler = precioAlquiler;
     }
 
     public void asignar(){
 
     }
 
-    public void verificarDisponibilidad(){
-        // Lógica para verificar disponibilidad
+    public boolean verificarDisponibilidad(){
+        return this.estado == EstadoVehiculo.DISPONIBLE;
     }
 
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "tipo=" + tipo +
+                ", placa='" + placa + '\'' +
+                ", maxPasajeros=" + maxPasajeros +
+                ", ubiActual='" + ubiActual + '\'' +
+                ", estado=" + estado +
+                ", proveedor=" + proveedor + '\'' +
+                ", precioAlquiler=" + precioAlquiler +
+                '}';
+    }
+    
+    //getters and setters
     public TipoVehiculo getTipo() {
         return tipo;
     }
@@ -72,17 +88,11 @@ public class Vehiculo {
     public void setProveedor(ProveedorVehiculo proveedor) {
         this.proveedor = proveedor;
     }
-
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "tipo=" + tipo +
-                ", placa='" + placa + '\'' +
-                ", maxPasajeros=" + maxPasajeros +
-                ", ubiActual='" + ubiActual + '\'' +
-                ", estado=" + estado +
-                ", proveedor=" + proveedor +
-                '}';
+    public double getPrecioAlquiler() {
+        return precioAlquiler;
     }
-    
+    public void setPrecioAlquiler(double precioAlquiler) {
+        this.precioAlquiler = precioAlquiler;
+    }
+
 }
