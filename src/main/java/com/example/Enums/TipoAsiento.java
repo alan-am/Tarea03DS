@@ -1,4 +1,4 @@
-package com.example;
+package com.example.Enums;
 
 public enum TipoAsiento {
     EJECUTIVO,

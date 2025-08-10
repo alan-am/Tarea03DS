@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.ChainResponsability.Operador;
+
 public class Administrador extends Usuario implements Operador {
     private String credencialAdmin;
     private Operador operador;

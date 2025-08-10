@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.Enums.EstadoAsiento;
+import com.example.Enums.TipoAsiento;
+
 public class Vuelo {
     private String numero;
     private String origen;

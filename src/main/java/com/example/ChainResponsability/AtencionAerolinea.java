@@ -1,20 +1,24 @@
-package com.example;
+package com.example.ChainResponsability;
 
-public class AtencionProveedorVehiculo implements Operador {
+import com.example.Aerolinea;
+import com.example.ReporteIncidencia;
+
+public class AtencionAerolinea implements Operador {
 
     private Operador operador;
-    private ProveedorVehiculo proveedorVehiculo;
-    
-    public AtencionProveedorVehiculo(ProveedorVehiculo proveedorVehiculo) {
+    private Aerolinea aerolinea;
+
+    public AtencionAerolinea(Aerolinea aerolinea) {
         this.operador = null;
-        this.proveedorVehiculo = proveedorVehiculo;
+        this.aerolinea = aerolinea;
     }
+
     
     @Override
     public String toString() {
-        return "AtencionProveedorVehiculo{" +
+        return "AtencionAerolinea{" +
                 "operador=" + operador +
-                ", proveedorVehiculo=" + proveedorVehiculo +
+                ", aerolinea=" + aerolinea +
                 '}';
     }
 
@@ -22,10 +26,10 @@ public class AtencionProveedorVehiculo implements Operador {
     public void setNextOperador(Operador operador) {
         this.operador = operador;
     }
-    
 
     @Override
     public void manejarConsulta(ReporteIncidencia reporte) {
+        
         if (this.operador != null) {
             this.operador.manejarConsulta(reporte);
         } else {
@@ -40,6 +44,5 @@ public class AtencionProveedorVehiculo implements Operador {
     public void setOperador(Operador operador) {
         this.operador = operador;
     }
-
 
 }

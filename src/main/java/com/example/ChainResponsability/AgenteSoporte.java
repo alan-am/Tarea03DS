@@ -1,4 +1,7 @@
-package com.example;
+package com.example.ChainResponsability;
+
+import com.example.ReporteIncidencia;
+import com.example.Usuario;
 
 public class AgenteSoporte extends Usuario implements Operador {
     private String idAgente;

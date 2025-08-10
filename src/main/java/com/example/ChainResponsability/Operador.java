@@ -1,4 +1,6 @@
-package com.example;
+package com.example.ChainResponsability;
+
+import com.example.ReporteIncidencia;
 
 public interface Operador {
 

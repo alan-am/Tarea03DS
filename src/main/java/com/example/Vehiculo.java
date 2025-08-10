@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.Enums.EstadoVehiculo;
+import com.example.Enums.TipoVehiculo;
+
 public class Vehiculo {
     private TipoVehiculo tipo;
     private String placa;

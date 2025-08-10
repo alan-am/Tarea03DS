@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.Enums.EstadoAsiento;
+import com.example.Enums.TipoAsiento;
+
 public class Asiento {
     private String numeroAsiento;
     private TipoAsiento tipo;
