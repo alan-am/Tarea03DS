@@ -5,20 +5,21 @@ public class Boleto {
     private Asiento asiento;
     private Vuelo vuelo;
     private Usuario duenio;
+    private double precio;
 
 
-    public Boleto(String numeroBoleto, Asiento asiento, Vuelo vuelo, Usuario duenio) {
+    public Boleto(String numeroBoleto, Asiento asiento, Vuelo vuelo, Usuario duenio, double precio) {
         this.numeroBoleto = numeroBoleto;
         this.asiento = asiento;
         this.vuelo = vuelo;
         this.duenio = duenio;
+        this.precio = precio;
     }
 
     //toString
     @Override
     public String toString() {
-        return "Boleto [numeroBoleto=" + numeroBoleto + ", asiento=" + asiento + ", vuelo=" + vuelo + ", duenio="
-                + duenio + "]";
+        return "Boleto [numeroBoleto=" + numeroBoleto + ", asiento=" + asiento + ", vuelo=" + vuelo + ", duenio=" + duenio + ", precio=" + precio + "]";
     }
 
     //getter and setters
@@ -46,6 +47,10 @@ public class Boleto {
     public void setDuenio(Usuario duenio) {
         this.duenio = duenio;
     }
-
-    
+    public double getPrecio() {
+        return precio;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }    
 }
