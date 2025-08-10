@@ -7,6 +7,12 @@ public class Boleto {
     private Usuario duenio;
 
 
+    public Boleto(String numeroBoleto, Asiento asiento, Vuelo vuelo, Usuario duenio) {
+        this.numeroBoleto = numeroBoleto;
+        this.asiento = asiento;
+        this.vuelo = vuelo;
+        this.duenio = duenio;
+    }
 
     //toString
     @Override

@@ -13,7 +13,7 @@ public class Asiento {
     }
 
     public boolean verificarDisponibilidad(){
-        return true;
+        return this.estado == EstadoAsiento.DISPONIBLE;
     }
 
 
