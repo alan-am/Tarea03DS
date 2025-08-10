@@ -8,6 +8,7 @@ import com.example.Usuario;
 import com.example.Vehiculo;
 import com.example.Vuelo;
 import com.example.Decorator.Servicio;
+import com.example.Observer.EventManager;
 
 public class Reserva implements Servicio {
     private String id;
@@ -18,6 +19,7 @@ public class Reserva implements Servicio {
     private List<Boleto> boletos;
     private List<Vehiculo> vehiculosReservados;
     private double precio;
+    private EventManager eventManager; //por relacion de agregacion
 
     public Reserva(){};
 
@@ -32,6 +34,18 @@ public class Reserva implements Servicio {
         this.precio = precio;
     }
 
+    //crear eventManager - por agregacion
+    public void setEventManager(EventManager eventManager) {
+        this.eventManager = eventManager;
+    }
+
+    //notificar cambio
+    private void notificarCambio(String mensaje) {
+        if (eventManager != null) {
+            eventManager.notify(mensaje);
+        }
+    }
+
     public void confirmar() {
         this.estado = EstadoReserva.CONFIRMADA;
     }
@@ -40,6 +54,12 @@ public class Reserva implements Servicio {
         this.estado = EstadoReserva.CANCELADA;
     }
 
+    @Override
+    public String toString() {
+        return "Reserva [id=" + id + ", fechaCreacion=" + fechaCreacion + ", reservador=" + reservador + ", estado="
+                + estado + ", vuelo=" + vuelo + ", boletos=" + boletos + ", vehiculosReservados=" + vehiculosReservados
+                + ", precio=" + precio + "]";
+    }
 
     //getters and setters
     public String getId() {
