@@ -12,11 +12,21 @@ public class Usuario {
         this.email = email;
         this.telefono = telefono;
     }
-
+    
     public void iniciarSesion() {
-        // Lógica para iniciar sesión
+        System.out.println("Usuario " + nombre + " ha iniciado sesión.");
     }
-
+    
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+}
     // Getters
     public String getId() {
         return id;
@@ -51,13 +61,3 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
-    }
-}

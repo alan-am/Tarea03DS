@@ -3,6 +3,20 @@ package com.example;
 public class AtencionProveedorVehiculo implements Operador {
 
     private Operador operador;
+    private ProveedorVehiculo proveedorVehiculo;
+    
+    public AtencionProveedorVehiculo(ProveedorVehiculo proveedorVehiculo) {
+        this.operador = null;
+        this.proveedorVehiculo = proveedorVehiculo;
+    }
+    
+    @Override
+    public String toString() {
+        return "AtencionProveedorVehiculo{" +
+                "operador=" + operador +
+                ", proveedorVehiculo=" + proveedorVehiculo +
+                '}';
+    }
 
     @Override
     public void setNextOperador(Operador operador) {
@@ -12,8 +26,11 @@ public class AtencionProveedorVehiculo implements Operador {
 
     @Override
     public void manejarConsulta(ReporteIncidencia reporte) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'manejarConsulta'");
+        if (this.operador != null) {
+            this.operador.manejarConsulta(reporte);
+        } else {
+            System.out.println("No hay un operador disponible para manejar la consulta: " + reporte);
+        }
     }
 
     public Operador getOperador() {
@@ -24,11 +41,5 @@ public class AtencionProveedorVehiculo implements Operador {
         this.operador = operador;
     }
 
-    @Override
-    public String toString() {
-        return "AtencionProveedorVehiculo{" +
-                "operador=" + operador +
-                '}';
-    }
 
 }

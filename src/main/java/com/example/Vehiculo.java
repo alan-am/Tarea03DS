@@ -19,9 +19,6 @@ public class Vehiculo {
         this.precioAlquiler = precioAlquiler;
     }
 
-    public void asignar(){
-
-    }
 
     public boolean verificarDisponibilidad(){
         return this.estado == EstadoVehiculo.DISPONIBLE;

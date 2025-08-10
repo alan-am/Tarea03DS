@@ -1,74 +1,42 @@
 package com.example;
 
+import java.util.List;
+
+import com.example.Builder.Reserva;
+
 public class Cliente extends Usuario {
-    private String id;
-    private String nombre;
-    private String email;
-    private String telefono;
+    private List<Reserva> reservasGeneradas;
 
     public Cliente(String id, String nombre, String email, String telefono) {
         super(id, nombre, email, telefono);
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.telefono = telefono;
     }
 
     public void realizarReserva() {
-        // Lógica para realizar una reserva
+        // Lógica para realizar una reserva omitida, debido a que seria una implementacion de integracion
+        //que incluiria metodos externos
     }
 
     public void cancelarReserva() {
-        // Lógica para cancelar una reserva
+        // Lógica para cancelar una reserva omitida, debido a que seria una implementacion de integracion
+        //que incluiria metodos externos
     }
 
     public void visualizarReserva() {
-        // Lógica para visualizar una reserva
+        for (Reserva reserva : reservasGeneradas) {
+            System.out.println(reserva);
+        }
     }
 
-    public void colocarReporte() {
-        // Lógica para colocar un reporte
+    public ReporteIncidencia colocarReporte(String idReporte, String descripcion) {
+        return new ReporteIncidencia(idReporte, descripcion, this);
     }
 
-    public String getId() {
-        return id;
+
+    public List<Reserva> getReservasGeneradas() {
+        return reservasGeneradas;
+    }
+    public void setReservasGeneradas(List<Reserva> reservasGeneradas) {
+        this.reservasGeneradas = reservasGeneradas;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
-    }
 }
