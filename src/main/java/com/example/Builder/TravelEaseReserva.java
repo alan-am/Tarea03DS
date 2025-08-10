@@ -50,6 +50,21 @@ public class TravelEaseReserva implements ReservaBuilder {
         this.reserva.setEstado(EstadoReserva.PENDIENTE);
     }
 
+    @Override
+    public void buildPrecio() {
+        double total = 0;
+        if (this.reserva.getBoletos() != null) {
+            for (Boleto boleto : this.reserva.getBoletos()) {
+                total += boleto.getPrecio();
+            }
+        }
+        if (this.reserva.getVehiculosReservados() != null) {
+            for (Vehiculo vehiculo : this.reserva.getVehiculosReservados()) {
+                total += vehiculo.getPrecioAlquiler();
+            }
+        }
+        this.reserva.setPrecio(total);
+    }
 
     
 }

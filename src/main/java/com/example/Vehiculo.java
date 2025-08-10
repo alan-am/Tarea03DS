@@ -94,5 +94,5 @@ public class Vehiculo {
     public void setPrecioAlquiler(double precioAlquiler) {
         this.precioAlquiler = precioAlquiler;
     }
-
+    
 }
