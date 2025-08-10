@@ -26,7 +26,7 @@ public class Usuario {
                 ", telefono='" + telefono + '\'' +
                 '}';
     }
-}
+
     // Getters
     public String getId() {
         return id;
@@ -60,4 +60,7 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+}
+    
+
 

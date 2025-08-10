@@ -8,6 +8,13 @@ public class Administrador extends Usuario implements Operador {
         super(idUsuario, nombre, email, telefono);
         this.credencialAdmin = credencialAdmin;
     }
+    
+
+    @Override
+    public String toString() {
+        return "Administrador [credencialAdmin=" + credencialAdmin + ", operador=" + operador + "]";
+    }
+
 
     public void gestionarPoliticas() {
         System.out.println("Gestionando políticas de la empresa. "+
