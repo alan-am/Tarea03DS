@@ -16,6 +16,7 @@ import com.example.Enums.EstadoVehiculo;
 import com.example.Enums.TipoAsiento;
 import com.example.Enums.TipoVehiculo;
 
+//probando el flujo completo del builder TravelEaseReserva, test de integracion para probar que tal
 class DummyAerolinea implements Aerolinea {
     @Override public void reservarVuelo() {}
     @Override public void confirmarVuelo() {}
@@ -27,6 +28,7 @@ class DummyProveedor implements ProveedorVehiculo {
     @Override public void confirmarVehiculo(String s) {}
     @Override public void cancelarVehiculo(String s) {}
 }
+
 
 public class TravelEaseReservaFullFlowTest {
 
