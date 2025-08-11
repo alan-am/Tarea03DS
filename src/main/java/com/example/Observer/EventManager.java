@@ -1,9 +1,10 @@
 package com.example.Observer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EventManager {
-    private List<Listener> listeners;
+    private List<Listener> listeners = new ArrayList<>();
 
     public void suscribe(Listener listener) {
         listeners.add(listener);
