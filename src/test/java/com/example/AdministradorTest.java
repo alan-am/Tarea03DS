@@ -36,4 +36,26 @@ public class AdministradorTest {
             administrador.manejarConsulta(reporteDummy);
         });
     }
+
+    @Test
+    @DisplayName("ID: TGPA-001: verificar el metodo si credencialAdmin tiene un valor válido")
+    void gestionarPoliticaTest() {
+        Administrador admin = new Administrador("1", "Eddy", "eaaa@gmail.com", "123456789", "ADMIN123");
+        
+        assertDoesNotThrow(() -> {
+            admin.gestionarPoliticas();
+        });
+    }
+
+    @Test
+    @DisplayName("ID: TGPA-002: verificar el metodo si credencialAdmin tiene un valor no válido")
+    void gestionarPoliticaTest2() {
+        Administrador admin = new Administrador("1", "Eddy", "eaaa@gmail.com", "123456789", null);
+        
+        Exception mens = assertThrows(IllegalArgumentException.class, () -> {
+            admin.gestionarPoliticas();
+        });
+
+        assertEquals("La credencial del administrador no puede ser nula ni vacío", mens.getMessage());
+    }
 }
