@@ -10,13 +10,12 @@ public class AgenteSoporte extends Usuario implements Operador {
     private String telefono;
     private Operador operador;
 
-    public AgenteSoporte(String idAgente, String nombre, String email, String telefono, Operador operador) {
+    public AgenteSoporte(String idAgente, String nombre, String email, String telefono) {
         super(idAgente, nombre, email, telefono);
         this.idAgente = idAgente;
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
-        this.operador = operador;
     }
 
     public String getIdAgente() {
@@ -55,10 +54,6 @@ public class AgenteSoporte extends Usuario implements Operador {
         return operador;
     }
 
-    public void setOperador(Operador operador) {
-        this.operador = operador;
-    }
-
     @Override
     public String toString() {
         return "AgenteSoporte{" +
@@ -72,14 +67,24 @@ public class AgenteSoporte extends Usuario implements Operador {
 
     @Override
     public void setNextOperador(Operador operador) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setNextOperador'");
+        this.operador = operador;
     }
 
     @Override
     public void manejarConsulta(ReporteIncidencia reporte) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'manejarConsulta'");
+        if(!gestionarConsulta(false) && operador != null){
+            operador.manejarConsulta(reporte);
+        }
     }
 
+    public boolean gestionarConsulta(boolean puedeGestionar) {
+        if (puedeGestionar) {
+            System.out.println("- Agente de soporte " + nombre + " está gestionando la consulta.");
+            return true;
+        } else if (operador != null && !puedeGestionar) {
+            System.out.println("- Agente de soporte " + nombre + " no puede gestionar la consulta. Pasando al siguiente operador.");
+            return false;
+        }
+        return false;
+    }
 }

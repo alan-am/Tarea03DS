@@ -29,12 +29,7 @@ public class AtencionAerolinea implements Operador {
 
     @Override
     public void manejarConsulta(ReporteIncidencia reporte) {
-        
-        if (this.operador != null) {
-            this.operador.manejarConsulta(reporte);
-        } else {
-            System.out.println("No hay un operador disponible para manejar la consulta: " + reporte);
-        }
+        System.out.println("- Consulta gestionada por un operador de la aerolinea: " + this.aerolinea + " para el reporte: " + reporte.getId());
     }
 
     public Operador getOperador() {
