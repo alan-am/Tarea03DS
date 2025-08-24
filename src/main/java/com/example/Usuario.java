@@ -2,28 +2,22 @@ package com.example;
 
 public class Usuario {
     private String id;
-    private String nombre;
-    private String email;
-    private String telefono;
+    private Contacto contacto;
 
     public Usuario(String id, String nombre, String email, String telefono) {
         this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.telefono = telefono;
+        this.contacto = new Contacto(nombre, email, telefono);
     }
-    
+
     public void iniciarSesion() {
-        System.out.println("Usuario " + nombre + " ha iniciado sesión.");
+        System.out.println("Usuario " + contacto.getNombre() + " ha iniciado sesión.");
     }
-    
+
     @Override
     public String toString() {
         return "Usuario{" +
                 "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
+                ", contacto=" + contacto +
                 '}';
     }
 
@@ -32,16 +26,8 @@ public class Usuario {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTelefono() {
-        return telefono;
+    public Contacto getContacto() {
+        return contacto;
     }
 
     // Setters
@@ -49,16 +35,8 @@ public class Usuario {
         this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setContacto(Contacto contacto) {
+        this.contacto = contacto;
     }
 }
     
