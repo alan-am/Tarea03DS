@@ -26,16 +26,6 @@ public class AdministradorTest {
     }
 
 
-    @Disabled
-    @Test
-    void manejarConsultaTest() {
-        Administrador administrador = new Administrador(null, null, null, null, null);
-        ReporteIncidencia reporteDummy = new ReporteIncidencia(null, null, null);
-
-        assertThrows(UnsupportedOperationException.class, () -> {
-            administrador.manejarConsulta(reporteDummy);
-        });
-    }
 
     @Test
     @DisplayName("ID: TGPA-001: verificar el metodo si credencialAdmin tiene un valor válido")
