@@ -1,18 +1,21 @@
 package com.example.Decorator;
 
-public class CoberturaExtendida implements Servicio {
+import com.example.Builder.Reserva;
 
-    private Servicio servicio;
+public class CoberturaExtendida {
+
+    private Reserva servicio;
     private double precio;
 
-    public CoberturaExtendida(Servicio servicio, double precio) {
+    public CoberturaExtendida(Reserva servicio, double precio) {
         this.servicio = servicio;
         this.precio = precio;
     }
 
-    public Servicio getServicio() {
+    public Reserva getServicio() {
         return servicio;
-    }   
+    }
+
     public double getPrecio() {
         return precio;
     }
@@ -24,5 +27,4 @@ public class CoberturaExtendida implements Servicio {
                 ", precio=" + precio +
                 '}';
     }
-    
 }

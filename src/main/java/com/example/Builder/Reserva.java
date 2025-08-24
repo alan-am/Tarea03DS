@@ -7,10 +7,9 @@ import com.example.Boleto;
 import com.example.Usuario;
 import com.example.Vehiculo;
 import com.example.Vuelo;
-import com.example.Decorator.Servicio;
 import com.example.Observer.EventManager;
 
-public class Reserva implements Servicio {
+public class Reserva {
     private String id;
     private LocalDateTime fechaCreacion;
     private Usuario reservador;

@@ -1,14 +1,17 @@
 package com.example.Decorator;
 
-public class SeguroViaje implements Servicio {
-    private Servicio servicio;
+import com.example.Builder.Reserva;
+
+public class SeguroViaje {
+    private Reserva servicio;
     private double precio;
 
-    public SeguroViaje(Servicio servicio, double precio) {
+    public SeguroViaje(Reserva servicio, double precio) {
         this.servicio = servicio;
         this.precio = precio;
-    }   
-    public Servicio getServicio() {
+    }
+
+    public Reserva getServicio() {
         return servicio;
     }
 
@@ -23,5 +26,4 @@ public class SeguroViaje implements Servicio {
                 ", precio=" + precio +
                 '}';
     }
-     
 }
